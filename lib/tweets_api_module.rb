@@ -24,7 +24,8 @@ module Tweets
       def parse_data(result)
         for tweet in result
           t = Tweet.new
-          t.created_at = tweet['created_at']
+          require 'pry';binding.pry
+          t.creation_time = Date.parse(tweet['created_at'])
           t.text = tweet['text']
           t.followers_count = tweet['followers_count']
           t.retweet_count = tweet['retweet_count']
@@ -36,7 +37,7 @@ module Tweets
       def parse_elasticsearch_data(result)
         final_search_result = Array.new
         for r in result
-          final_search_result << {'created_at' => r.created_at, 'text' => r.text}
+          final_search_result << {'creation_time' => r.creation_time, 'text' => r.text}
         end
         final_search_result
       end

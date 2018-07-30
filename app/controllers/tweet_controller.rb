@@ -21,8 +21,10 @@ class TweetController < ApplicationController
 
   def search
     count = params[:count].present? ? params[:count] : 100
+    lower_date_range = params[:lower_range].present? ? params[:lower_range] : Time.now
+    upper_date_range = params[:upper_range].present? ? params[:upper_range] : Time.now
     unless params[:query].blank?
-      result = Tweet.search_query(params[:query], count)
+      result = Tweet.search_query(params[:query], count, lower_date_range, upper_date_range)
       render :json => {'result' => parse_elasticsearch_data(result)}
     end
     {}
