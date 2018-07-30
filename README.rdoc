@@ -1,23 +1,23 @@
-Welcome to ElasticSearch Project
-Steps to Start the project
-Run bundle exec rails s to run the rails server
+== Welcome to ElasticSearch Project
+== Steps to Start the project
+1.Run bundle exec rails s to run the rails server
 
-Run rails console in other window bundle exec rails c
+2.Run rails console in other window bundle exec rails c
 
-Run bundle exec rake db:migrate to create database
+3.Run bundle exec rake db:migrate to create database
 
-Download the elasticsearch and then go to elasticsearch folder and execute ./bin/elasticsearch
+4.Download the elasticsearch and then go to elasticsearch folder and execute ./bin/elasticsearch
 
-In rails console create the elasticsearch index using Tweet.import force: true
+5. In rails console create the elasticsearch index using Tweet.import force: true
 
-API calls
-To add tweets to database execute localhost:3000/add?keyword=xyz
+== API calls
+1.To add tweets to database execute localhost:3000/add?keyword=xyz
 
-This will make api call to tweeter and will fetch tweets related to xyz
+2.This will make api call to tweeter and will fetch tweets related to xyz
 
-To search the tweets related to keyword execute localhost:3000/search?query=xyz&count=1000
+3.To search the tweets related to keyword execute localhost:3000/search?query=xyz&count=1000
 
-This will give you tweets related to xyz and the tweets can have count 1000
+4.This will give you tweets related to xyz and the tweets can have count 1000
 
-Troubleshooting
+==Troubleshooting
 If getting error org.elasticsearch.transport.ConnectTransportException: [Calypso][inet] connect_timeout while running elasticsearch then you need to enable line 25 (xpack.security.enabled: false) in elasticsearch.yml file
